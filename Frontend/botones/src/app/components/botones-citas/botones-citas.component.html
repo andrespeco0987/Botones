@@ -1,0 +1,53 @@
+<div class="button-container">
+	<button type="button" class="btn btn-warning btn-shadow" data-bs-toggle="modal" data-bs-target="#modal1">
+		<strong>Ayuda social</strong>
+	</button>
+	<p id="agendaTuCita"></p>
+	<div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h1 class="modal-title fs-3" id="exampleModalLabel">Agenda tu cita</h1>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="container mt-3">
+					<form (ngSubmit)="makeAppointment()">
+						<ul class="list-group">
+							<li class="list-group-item custom-checkbox">
+								<input type="checkbox" id="hogarTemporal" [(ngModel)]="appointment.hogarTemporal" name="hogarTemporal" />
+								<label for="hogarTemporal">Hogar temporal</label>
+							</li>
+							<li class="list-group-item custom-checkbox">
+								<input type="checkbox" id="paseadorCanino" [(ngModel)]="appointment.paseadorCanino" name="paseadorCanino" />
+								<label for="paseadorCanino">Paseador canino</label>
+							</li>
+							<li class="list-group-item custom-checkbox">
+								<input type="checkbox" id="voluntariadoDeLimpieza" [(ngModel)]="appointment.voluntariadoDeLimpieza" name="voluntariadoDeLimpieza" />
+								<label for="voluntariadoDeLimpieza">Voluntariado de limpieza</label>
+							</li>
+							<li class="list-group-item custom-checkbox">
+								<input type="checkbox" id="veterinaria" [(ngModel)]="appointment.veterinaria" name="veterinaria" />
+								<label for="veterinaria">Veterinaria</label>
+							</li>
+							<li class="list-group-item custom-checkbox">
+								<input type="checkbox" id="donar" [(ngModel)]="appointment.donar" name="donar" />
+								<label for="donar">Donar</label>
+							</li>
+						</ul>
+						<div class="modal-body">
+							<div class="container m-2 mb-5">
+								<h5>Selecciona una fecha</h5>
+								<div class="form-group mt-3">
+									<input type="date" class="form-control" id="fecha" [(ngModel)]="appointment.fecha" name="fecha" />
+								</div>
+								<button type="submit" class="btn btn-primary mt-3 btn-warning">
+									<strong>Confirmar</strong>
+								</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
